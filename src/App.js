@@ -8,7 +8,7 @@ import { useEffect , useState} from 'react'
 
 
 
-function App() {
+export default function App() {
   const [jokeArray, setJokeArray] = useState([]);
   async function getJoke() {
     // fetch the joke
@@ -22,17 +22,15 @@ function App() {
     
     
     console.log(jokeData.joke)
+    
     setJokeArray([
       ...jokeArray,
       jokeData.joke
     ]);
     
   }
-  useEffect(() => {
-
-    getJoke();
-  }, []);
-  const [joke, setJoke] = useState("") 
+  
+  const [joke, setJoke] = useState("who's there");
   console.log('this is the joke in state?:', joke);
 
   return (
@@ -45,4 +43,6 @@ function App() {
   );
 }
 
-export default App;
+
+
+
